@@ -1,0 +1,1 @@
+# scu-course-auto-selector
