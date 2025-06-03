@@ -1,7 +1,7 @@
 # SCU Course Auto Selector
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/violetctl39/scu-course-auto-selector)
+[![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](https://github.com/violetctl39/scu-course-auto-selector)
 [![GreasyFork](https://img.shields.io/badge/GreasyFork-Ready-brightgreen.svg)](https://greasyfork.org/)
 [![GitHub Stars](https://img.shields.io/github/stars/violetctl39/scu-course-auto-selector?style=social)](https://github.com/violetctl39/scu-course-auto-selector)
 
@@ -11,32 +11,41 @@
 
 **Author | 作者**: [violetctl39](https://github.com/violetctl39)
 
-## 🚀 特性
+## 🚀 Features | 特性
 
-- ⚡ **极速选课**：10ms级别检查，批量并发处理，最快的选课速度
-- 🎯 **精确匹配**：通过课程号和课序号精确定位目标课程
-- 📋 **批量处理**：支持同时处理多门课程，按课程号分组查询
-- 🔄 **智能重试**：自动处理网络延迟和页面加载问题
-- 📊 **实时反馈**：详细的成功/失败结果显示
-- 🎨 **用户友好**：可拖拽控制面板，高亮目标课程
-- 🛡️ **安全可靠**：只勾选不提交，用户手动确认提交
+- ⚡ **Ultra-Fast Selection** | **极速选课**：10ms-level response with optimized event handling for lightning-fast course selection | 10ms级响应，优化事件处理，实现极速选课
+- 🎯 **Precise Matching** | **精确匹配**：Accurate course identification using course code and class number | 通过课程号和课序号精确定位目标课程
+- 📋 **Batch Processing** | **批量处理**：Handle multiple courses simultaneously with grouped queries by course code | 支持同时处理多门课程，按课程号分组查询
+- 🔄 **Smart Retry** | **智能重试**：Automatic handling of network delays and page loading issues | 自动处理网络延迟和页面加载问题
+- 📊 **Real-time Feedback** | **实时反馈**：Detailed success/failure results with comprehensive logging | 详细的成功/失败结果显示和全面日志记录
+- 🎨 **User-Friendly Interface** | **用户友好界面**：Draggable control panel with target course highlighting | 可拖拽控制面板，高亮目标课程
+- 🛡️ **Safe & Reliable** | **安全可靠**：Only selects courses without auto-submission, requires manual confirmation | 只勾选不提交，用户手动确认提交
+- 📱 **Responsive Design** | **响应式设计**：Adaptive interface that works on different screen sizes | 自适应界面，支持不同屏幕尺寸
+- 💾 **Smart Caching** | **智能缓存**：Optimized DOM queries with caching for improved performance | 优化DOM查询并缓存，提升性能
 
 ## 📦 Installation | 安装方法
 
-### Method 1: Install from GitHub (Recommended) | 方法一：从 GitHub 安装（推荐）
+### 🚀 Method 1: Install from GitHub (Recommended) | 方法一：从 GitHub 安装（推荐）
 1. Install [Tampermonkey](https://www.tampermonkey.net/) browser extension | 安装 Tampermonkey 浏览器扩展
 2. Click to install: [📥 Install Script](https://github.com/violetctl39/scu-course-auto-selector/raw/main/scu-course-auto-selector.js) | 点击安装脚本
 3. Tampermonkey will automatically detect and prompt to install | Tampermonkey 会自动检测并提示安装
 
-### Method 2: Manual Installation | 方法二：手动安装
+### 🔧 Method 2: Manual Installation | 方法二：手动安装
 1. Install [Tampermonkey](https://www.tampermonkey.net/) browser extension | 安装 Tampermonkey 浏览器扩展
 2. Copy the [script source code](https://github.com/violetctl39/scu-course-auto-selector/raw/main/scu-course-auto-selector.js) | 复制脚本源码
 3. Create a new script in Tampermonkey dashboard and paste the code | 在 Tampermonkey 管理页面创建新脚本并粘贴代码
 
-### Method 3: GreasyFork (Coming Soon) | 方法三：GreasyFork（即将推出）
+### 🌐 Method 3: GreasyFork (Coming Soon) | 方法三：GreasyFork（即将推出）
 - Will be available on GreasyFork after review | 审核通过后将在 GreasyFork 上提供
 
 ## 🔧 Usage | 使用方法
+
+### ⚡ Quick Start | 快速开始
+1. **Install** | **安装**: Install the script via Tampermonkey | 通过 Tampermonkey 安装脚本
+2. **Configure** | **配置**: Edit target courses in script settings | 在脚本设置中编辑目标课程
+3. **Navigate** | **导航**: Go to SCU course selection page | 进入川大选课页面
+4. **Execute** | **执行**: Click "Auto Select Courses" button | 点击"Auto Select Courses"按钮
+5. **Confirm** | **确认**: Review and manually submit | 检查并手动提交
 
 ### Step 1: Configure Target Courses | 步骤一：配置目标课程
 Edit the script configuration to add your target courses | 编辑脚本配置添加目标课程：
@@ -67,20 +76,22 @@ targetCourses: [
 
 ## ⚡ Ultra-Fast Optimization Features | 极速优化特性
 
-- **10ms-level checks** | **10ms级检查**：Lightning-fast response, 10x faster than standard versions | 极速响应，比标准版本快10倍
-- **Concurrent processing** | **并发处理**：Handle multiple class numbers simultaneously without waiting | 同时处理多个课序号，无需等待  
-- **Smart caching** | **智能缓存**：Reduce DOM queries for improved performance | 减少DOM查询，提升性能
-- **Batch events** | **批量事件**：Trigger all necessary events in one go | 一次性触发所有必要事件
-- **Instant verification** | **无延迟验证**：Immediately verify selection status | 立即验证勾选状态
-- **Ultra-fast queries** | **超快查询**：1-second query timeout for maximum success rate | 1秒查询超时，最大化成功率
+- **⚡ 10ms-level Response** | **10ms级响应**：Lightning-fast course detection and selection, up to 10x faster than standard versions | 极速课程检测和勾选，比标准版本快10倍
+- **🔄 Concurrent Processing** | **并发处理**：Simultaneous handling of multiple class numbers without sequential waiting | 同时处理多个课序号，无需顺序等待  
+- **💾 Smart Caching** | **智能缓存**：Efficient DOM element caching to minimize queries and boost performance | 高效DOM元素缓存，减少查询提升性能
+- **🎯 Batch Event Handling** | **批量事件处理**：Optimized event triggering for immediate course selection response | 优化事件触发，立即响应课程勾选
+- **⚡ Instant Verification** | **即时验证**：Real-time selection status validation without delays | 实时勾选状态验证，零延迟确认
+- **🚀 Ultra-Fast Queries** | **超速查询**：1-second optimized query timeout for maximum success rate | 1秒优化查询超时，最大化成功率
+- **📊 Performance Monitoring** | **性能监控**：Built-in timing and performance analytics for optimal speed | 内置计时和性能分析，确保最优速度
 
 ## 🔧 Workflow | 工作流程
 
-1. **Enter course code** | **输入课程号** → Auto-fill search box | 自动填写到搜索框
-2. **Query courses** | **查询课程** → Display all class numbers | 显示所有课序号
-3. **Select targets** | **勾选目标** → Precise matching and selection | 精确匹配并勾选
-4. **Repeat process** | **重复处理** → Process next course code | 处理下一个课程号
-5. **Manual submission** | **手动提交** → User confirm and submit | 用户确认并提交
+1. **🔍 Course Code Input** | **课程号输入** → Automatically fill course code into search field | 自动填写课程号到搜索框
+2. **🔍 Query Execution** | **执行查询** → Trigger course query and wait for results | 触发课程查询并等待结果
+3. **📋 Course Discovery** | **课程发现** → Parse and identify all available class numbers | 解析并识别所有可用课序号
+4. **🎯 Target Selection** | **目标勾选** → Precise matching and automatic selection of target courses | 精确匹配并自动勾选目标课程
+5. **🔄 Batch Processing** | **批量处理** → Process next course code group efficiently | 高效处理下一组课程号
+6. **✅ Manual Confirmation** | **手动确认** → User reviews results and submits manually | 用户检查结果并手动提交
 
 ## 📝 Configuration Guide | 配置说明
 
@@ -94,7 +105,45 @@ targetCourses: [
 }
 ```
 
+### Example Configuration | 配置示例
+
+Based on the script's default configuration | 基于脚本默认配置：
+
+```javascript
+const CONFIG = {
+    targetCourses: [
+        { 
+            courseName: "法医世界：全球大案的深度剖析", 
+            courseCode: "501265020", 
+            classNumber: "01", 
+            priority: 1 
+        },
+        { 
+            courseName: "中华文化（哲学篇）", 
+            courseCode: "999009020", 
+            classNumber: "03", 
+            priority: 2 
+        },
+        { 
+            courseName: "静力学与材料力学1（全英文）", 
+            courseCode: "312015030", 
+            classNumber: "01", 
+            priority: 3 
+        },
+        { 
+            courseName: "概率、随机变量与分布（全英文）", 
+            courseCode: "312176030", 
+            classNumber: "02", 
+            priority: 4 
+        }
+    ],
+    autoSelect: { enabled: true, autoSubmit: false },
+    ui: { showPanel: true, highlightTarget: true, showNotification: true }
+};
+```
+
 ### Advanced Configuration | 高级配置
+
 ```javascript
 // Multiple class numbers for the same course | 同一课程的多个课序号
 {
@@ -111,6 +160,16 @@ targetCourses: [
 }
 ```
 
+### UI Configuration | 界面配置
+
+```javascript
+ui: {
+    showPanel: true,        // Display control panel | 显示控制面板
+    highlightTarget: true,  // Highlight target courses | 高亮目标课程
+    showNotification: true  // Show success notifications | 显示成功通知
+}
+```
+
 ## ⚠️ Important Notes | 注意事项
 
 1. **Select only, no auto-submit** | **仅勾选不提交**：Script only selects courses, won't auto-submit | 脚本只勾选课程，不会自动提交
@@ -120,16 +179,53 @@ targetCourses: [
 
 ## 🔍 Troubleshooting | 故障排除
 
+### Common Issues | 常见问题
+
 | Problem | Solution | 问题 | 解决方案 |
 |---------|----------|------|----------|
-| Course code input not found | Check if page is fully loaded | 找不到课程号输入框 | 检查页面是否完全加载 |
-| Query failed | Confirm course code format | 查询失败 | 确认课程号格式正确 |
-| Selection failed | Check if class number exists and is available | 勾选失败 | 检查课序号是否存在且可选 |
-| Control panel not shown | Refresh page or reinstall script | 控制面板不显示 | 刷新页面或重新安装脚本 |
+| Course code input not found | Check if page is fully loaded, verify course system access | 找不到课程号输入框 | 检查页面是否完全加载，确认选课系统访问正常 |
+| Query failed or timeout | Confirm course code format is correct, check network connection | 查询失败或超时 | 确认课程号格式正确，检查网络连接状态 |
+| Selection failed | Verify class number exists and is available for selection | 勾选失败 | 检查课序号是否存在且可供选择 |
+| Control panel not displayed | Refresh page, check Tampermonkey script status, or reinstall | 控制面板不显示 | 刷新页面，检查Tampermonkey脚本状态或重新安装 |
+| Script not working | Ensure you're on the correct course selection page URL | 脚本不工作 | 确保在正确的选课页面URL上 |
+| Performance issues | Clear browser cache, disable other extensions temporarily | 性能问题 | 清除浏览器缓存，暂时禁用其他扩展 |
+
+### FAQ | 常见问题解答
+
+**Q: Is this script safe to use? | 这个脚本使用安全吗？**  
+A: Yes, the script only selects courses and never auto-submits. You maintain full control. | 是的，脚本只勾选课程，从不自动提交。您保持完全控制权。
+
+**Q: Will this guarantee I get the courses? | 这能保证我选到课程吗？**  
+A: The script helps with speed and accuracy, but course availability depends on the system. | 脚本有助于提高速度和准确性，但课程可用性取决于系统。
+
+**Q: Can I use this for other universities? | 我可以在其他大学使用吗？**  
+A: This script is specifically designed for SCU's system. Modifications would be needed for other systems. | 此脚本专为川大系统设计。其他系统需要修改。
+
+**Q: How fast is the selection process? | 选课过程有多快？**  
+A: The script can process selections in 10ms intervals with concurrent handling for maximum speed. | 脚本可以10ms间隔处理选课，并发处理以获得最大速度。
 
 ## 📄 License | 许可证
 
 This project is licensed under the [MIT License](LICENSE) | 本项目采用 [MIT 许可证](LICENSE) 开源。
+
+## 🔧 Technical Specifications | 技术规格
+
+- **Script Engine** | **脚本引擎**: Tampermonkey / Greasemonkey compatible
+- **Target Website** | **目标网站**: `http*://zhjw.scu.edu.cn/student/courseSelect/freeCourse/index*`
+- **Browser Support** | **浏览器支持**: Chrome, Firefox, Edge, Safari (with Tampermonkey)
+- **Performance** | **性能**: 10ms response time, concurrent processing
+- **File Size** | **文件大小**: ~15KB (optimized and commented)
+- **Dependencies** | **依赖**: None (vanilla JavaScript)
+
+## 📋 Changelog | 更新日志
+
+### Version 1.1.0 (Latest) | 版本 1.1.0（最新）
+- ⚡ **Performance Optimization**: Implemented 10ms-level response time | 性能优化：实现10ms级响应时间
+- 🔄 **Concurrent Processing**: Added batch course selection with concurrent handling | 并发处理：添加批量选课和并发处理
+- 💾 **Smart Caching**: Optimized DOM queries with intelligent caching | 智能缓存：优化DOM查询并增加智能缓存
+- 📱 **Responsive Design**: Enhanced UI adaptability for different screen sizes | 响应式设计：增强界面对不同屏幕尺寸的适应性
+- 🎯 **Improved Accuracy**: Better course matching and error handling | 提升准确性：更好的课程匹配和错误处理
+- 🛡️ **Enhanced Safety**: Additional validation and confirmation steps | 增强安全性：增加验证和确认步骤
 
 ## 🤝 Contributing | 贡献
 
@@ -151,7 +247,7 @@ If this project helps you, please give it a ⭐️! | 如果这个项目对你�
 
 ---
 
-**Version | 版本**: 1.0.0  
+**Version | 版本**: 1.1.0  
 **Author | 作者**: [violetctl39](https://github.com/violetctl39)  
 **License | 许可证**: MIT  
 **Compatible with | 适用于**: Sichuan University Academic System Course Selection Page | 四川大学教务系统选课页面
@@ -162,7 +258,5 @@ If this project helps you, please give it a ⭐️! | 如果这个项目对你�
 
 **Made with ❤️ by violetctl39**
 
-*Ultra-fast, precise, and reliable course selection for SCU students*  
-*为川大学子提供极速、精准、可靠的选课体验*
 
 </div>
