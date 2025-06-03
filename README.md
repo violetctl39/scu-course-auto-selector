@@ -15,7 +15,7 @@
 
 - ⚡ **Ultra-Fast Selection** | **极速选课**：10ms-level response with optimized event handling for lightning-fast course selection | 10ms级响应，优化事件处理，实现极速选课
 - 🎯 **Precise Matching** | **精确匹配**：Accurate course identification using course code and class number | 通过课程号和课序号精确定位目标课程
-- 📋 **Batch Processing** | **批量处理**：Handle multiple courses simultaneously with grouped queries by course code | 支持同时处理多门课程，按课程号分组查询
+- 📋 **Sequential Processing** | **顺序处理**：Processes courses in array order without priority conflicts for predictable results | 按数组顺序处理课程，无优先级冲突，结果可预测
 - 🔄 **Smart Retry** | **智能重试**：Automatic handling of network delays and page loading issues | 自动处理网络延迟和页面加载问题
 - 📊 **Real-time Feedback** | **实时反馈**：Detailed success/failure results with comprehensive logging | 详细的成功/失败结果显示和全面日志记录
 - 🎨 **User-Friendly Interface** | **用户友好界面**：Draggable control panel with target course highlighting | 可拖拽控制面板，高亮目标课程
@@ -54,8 +54,7 @@ targetCourses: [
     {
         courseName: "法医世界：全球大案的深度剖析",  // Course name | 课程名称
         courseCode: "501265020",                    // Course code | 课程号
-        classNumber: "01",                          // Class number | 课序号
-        priority: 1                                 // Priority | 优先级
+        classNumber: "01"                           // Class number | 课序号
     }
 ]
 ```
@@ -89,7 +88,7 @@ targetCourses: [
 1. **🔍 Course Code Input** | **课程号输入** → Automatically fill course code into search field | 自动填写课程号到搜索框
 2. **🔍 Query Execution** | **执行查询** → Trigger course query and wait for results | 触发课程查询并等待结果
 3. **📋 Course Discovery** | **课程发现** → Parse and identify all available class numbers | 解析并识别所有可用课序号
-4. **🎯 Target Selection** | **目标勾选** → Precise matching and automatic selection of target courses | 精确匹配并自动勾选目标课程
+4. **🎯 Sequential Selection** | **顺序勾选** → Process courses in array order for predictable selection | 按数组顺序处理课程，实现可预测的选课
 5. **🔄 Batch Processing** | **批量处理** → Process next course code group efficiently | 高效处理下一组课程号
 6. **✅ Manual Confirmation** | **手动确认** → User reviews results and submits manually | 用户检查结果并手动提交
 
@@ -100,8 +99,7 @@ targetCourses: [
 {
     courseName: "Course Name",       // Display only | 仅用于显示
     courseCode: "501265020",        // Course code (Required) | 课程号（必填）
-    classNumber: "01",              // Class number (Required) | 课序号（必填）
-    priority: 1                     // Priority (Lower = Higher) | 优先级（数字越小越优先）
+    classNumber: "01"               // Class number (Required) | 课序号（必填）
 }
 ```
 
@@ -115,26 +113,22 @@ const CONFIG = {
         { 
             courseName: "法医世界：全球大案的深度剖析", 
             courseCode: "501265020", 
-            classNumber: "01", 
-            priority: 1 
+            classNumber: "01"
         },
         { 
             courseName: "中华文化（哲学篇）", 
             courseCode: "999009020", 
-            classNumber: "03", 
-            priority: 2 
+            classNumber: "03"
         },
         { 
             courseName: "静力学与材料力学1（全英文）", 
             courseCode: "312015030", 
-            classNumber: "01", 
-            priority: 3 
+            classNumber: "01"
         },
         { 
             courseName: "概率、随机变量与分布（全英文）", 
             courseCode: "312176030", 
-            classNumber: "02", 
-            priority: 4 
+            classNumber: "02"
         }
     ],
     autoSelect: { enabled: true, autoSubmit: false },
@@ -149,16 +143,16 @@ const CONFIG = {
 {
     courseName: "Advanced Mathematics A",
     courseCode: "101001010",
-    classNumber: "01",
-    priority: 1
+    classNumber: "01"
 },
 {
     courseName: "Advanced Mathematics A", 
     courseCode: "101001010",        // Same course code | 相同课程号
-    classNumber: "02",              // Different class number | 不同课序号
-    priority: 2
+    classNumber: "02"               // Different class number | 不同课序号
 }
 ```
+
+**Note**: Courses will be processed in the order they appear in the array | **注意**：课程将按照它们在数组中出现的顺序处理。
 
 ### UI Configuration | 界面配置
 
@@ -204,6 +198,9 @@ A: This script is specifically designed for SCU's system. Modifications would be
 **Q: How fast is the selection process? | 选课过程有多快？**  
 A: The script can process selections in 10ms intervals with concurrent handling for maximum speed. | 脚本可以10ms间隔处理选课，并发处理以获得最大速度。
 
+**Q: How does the course selection order work? | 选课顺序是怎样的？**  
+A: Courses are processed in the exact order they appear in the targetCourses array, making selection predictable. | 课程按照它们在targetCourses数组中出现的确切顺序处理，使选课过程可预测。
+
 ## 📄 License | 许可证
 
 This project is licensed under the [MIT License](LICENSE) | 本项目采用 [MIT 许可证](LICENSE) 开源。
@@ -221,11 +218,12 @@ This project is licensed under the [MIT License](LICENSE) | 本项目采用 [MIT
 
 ### Version 1.1.0 (Latest) | 版本 1.1.0（最新）
 - ⚡ **Performance Optimization**: Implemented 10ms-level response time | 性能优化：实现10ms级响应时间
-- 🔄 **Concurrent Processing**: Added batch course selection with concurrent handling | 并发处理：添加批量选课和并发处理
+- 🔄 **Sequential Processing**: Removed priority system, now processes courses in array order | 顺序处理：移除优先级系统，现按数组顺序处理课程
 - 💾 **Smart Caching**: Optimized DOM queries with intelligent caching | 智能缓存：优化DOM查询并增加智能缓存
 - 📱 **Responsive Design**: Enhanced UI adaptability for different screen sizes | 响应式设计：增强界面对不同屏幕尺寸的适应性
 - 🎯 **Improved Accuracy**: Better course matching and error handling | 提升准确性：更好的课程匹配和错误处理
 - 🛡️ **Enhanced Safety**: Additional validation and confirmation steps | 增强安全性：增加验证和确认步骤
+- 🚫 **Priority Removal**: Simplified configuration by removing priority-based selection | 移除优先级：通过移除基于优先级的选择简化配置
 
 ## 🤝 Contributing | 贡献
 

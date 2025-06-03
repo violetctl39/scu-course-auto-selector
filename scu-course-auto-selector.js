@@ -10,16 +10,14 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
-
-    const CONFIG = {
+    'use strict';    const CONFIG = {
         targetCourses: [
-            { courseName: "法医世界：全球大案的深度剖析", courseCode: "501265020", classNumber: "01", priority: 1 },
-            { courseName: "中华文化（哲学篇）", courseCode: "999009020", classNumber: "03", priority: 2 },
-            { courseName: "静力学与材料力学1（全英文）", courseCode: "312015030", classNumber: "01", priority: 3 },
-            { courseName: "概率、随机变量与分布（全英文）", courseCode: "312176030", classNumber: "02", priority: 4 },
-            { courseName: "用C++解决ECE问题（全英文）", courseCode: "501265020", classNumber: "01", priority: 5 },
-            { courseName: "ECE分析方法（全英文）", courseCode: "312177030", classNumber: "02", priority: 6 }
+            { courseName: "法医世界：全球大案的深度剖析", courseCode: "501265020", classNumber: "01" },
+            { courseName: "中华文化（哲学篇）", courseCode: "999009020", classNumber: "03" },
+            { courseName: "静力学与材料力学1（全英文）", courseCode: "312015030", classNumber: "01" },
+            { courseName: "概率、随机变量与分布（全英文）", courseCode: "312176030", classNumber: "02" },
+            { courseName: "用C++解决ECE问题（全英文）", courseCode: "501265020", classNumber: "01" },
+            { courseName: "ECE分析方法（全英文）", courseCode: "312177030", classNumber: "02" }
         ],
         autoSelect: { enabled: true, autoSubmit: false },
         ui: { showPanel: true, highlightTarget: true, showNotification: true }
@@ -98,29 +96,27 @@
                 utils.log(`解析课程信息失败: ${e.message}`, 'error');
                 return null;
             }
-        },
-
-        findMatchingCourses: () => {
+        },        findMatchingCourses: () => {
             const checkboxes = courseSelector.getAllCourseCheckboxes();
             const matchingCourses = [];
 
-            checkboxes.forEach(checkbox => {
-                const courseInfo = courseSelector.parseCourseInfo(checkbox);
-                if (!courseInfo) return;
+            // 按照CONFIG.targetCourses的顺序进行匹配
+            CONFIG.targetCourses.forEach(targetCourse => {
+                checkboxes.forEach(checkbox => {
+                    const courseInfo = courseSelector.parseCourseInfo(checkbox);
+                    if (!courseInfo) return;
 
-                CONFIG.targetCourses.forEach(targetCourse => {
                     if (courseInfo.courseCode === targetCourse.courseCode && 
                         courseInfo.classNumber === targetCourse.classNumber) {
                         matchingCourses.push({
                             ...courseInfo,
-                            priority: targetCourse.priority || 999,
                             targetConfig: targetCourse
                         });
                     }
                 });
             });
 
-            return matchingCourses.sort((a, b) => a.priority - b.priority);
+            return matchingCourses;
         },
 
         selectCourse: async (courseInfo) => {
